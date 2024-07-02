@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -8,7 +8,7 @@ import { Input } from "@nextui-org/react";
 import { EyeSlashFilledIcon } from '../icons/EyeSlashFilledIcon';
 import { EyeFilledIcon } from '../icons/EyeFilledIcon';
 
-// Define the shape of your form data
+
 interface IFormInput {
   email: string;
   password: string;
@@ -24,6 +24,8 @@ const AdminLogin: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
 
+  const navigate = useNavigate();
+
   const { register, handleSubmit, formState: { errors }, reset } = useForm<IFormInput>({
     resolver: yupResolver(schema),
   });
@@ -31,6 +33,7 @@ const AdminLogin: React.FC = () => {
   const onSubmit: SubmitHandler<IFormInput> = data => {
     console.log('Email', data.email);
     console.log('Password', data.password);
+    navigate("/admin")
     reset();
   };
 

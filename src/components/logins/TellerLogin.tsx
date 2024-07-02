@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -21,6 +21,8 @@ const schema = yup.object({
 }).required();
 
 const TellerLogin: React.FC = () => {
+
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
 
@@ -31,6 +33,7 @@ const TellerLogin: React.FC = () => {
   const onSubmit: SubmitHandler<IFormInput> = data => {
     console.log('Email', data.email);
     console.log('Password', data.password);
+    navigate("/teller")
     reset();
   };
 
