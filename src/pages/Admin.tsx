@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import razzy from "../assets/images/razzy.jpg";
 
 interface IAdminProps {
@@ -24,12 +24,12 @@ const Admin = ({}: IAdminProps) => {
           <p className="font-thin text-[12px]">Admin</p>
         </div>
         <div className="flex justify-center">
-          <ul className="flex flex-col justify-center">
-            <li>Overview</li>
-            <li>Set up Zone</li>
-            <li>Services</li>
-            <li>Reports</li>
-            <li>Reports</li>
+          <ul className="flex flex-col justify-center gap-5">
+            <li><Link to="overview">Overview</Link></li>
+            <li><Link to="setup-zone">Set up Zone</Link></li>
+            <li><Link to="services">Services</Link></li>
+            <li><Link to="reports">Reports</Link></li>
+            <li>Profile</li>
 
           </ul>
 

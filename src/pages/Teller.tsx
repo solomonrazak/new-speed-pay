@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import razzy from "../assets/images/razzy.jpg";
 
 interface ITellerProps {
@@ -21,15 +21,15 @@ const Teller = ({}: ITellerProps) => {
             />
           </div>
           <h1 className="text-slate-900 font-medium">Solomon Razak</h1>
-          <p className="font-thin text-[12px]">Admin</p>
+          <p className="font-thin text-[12px]">Teller</p>
         </div>
         <div className="flex justify-center">
-          <ul className="flex flex-col justify-center">
-            <li>Overview</li>
-            <li>Set up Zone</li>
-            <li>Services</li>
-            <li>Reports</li>
-            <li>Reports</li>
+          <ul className="flex flex-col justify-center gap-5">
+            <li><Link to="tell-overview">Overview</Link></li>
+            <li><Link to="bill-payments">Bill Payments</Link></li>
+            <li><Link to="bill-generator">Bill Generator</Link></li>
+            <li><Link to="tell-reports">Reports</Link></li>
+            <li>Profile</li>
 
           </ul>
 
