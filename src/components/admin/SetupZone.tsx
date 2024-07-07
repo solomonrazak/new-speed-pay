@@ -12,7 +12,7 @@ const SetupZone = () => {
         <p><Link to="new-service">New Service</Link></p>
       </div>
       <div className="flex justify-center items-center mx-auto">
-      <div className="border border-slate-900 rounded-md p-16">
+      <div className="border border-slate-900 rounded-md p-20">
         <Outlet />
 
       </div>
