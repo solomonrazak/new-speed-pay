@@ -8,7 +8,7 @@ const defaultUserDetails: UserDetails = {
   firstName: "",
   lastName: "",
   email: "",
-  phoneNumber: 0,
+  phoneNumber: "",
 };
 
 export const userContext = createContext<UserContextType>({
@@ -31,7 +31,7 @@ export const UserContextProvider = ({
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState(0);
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   const value: UserContextType = {
     access,

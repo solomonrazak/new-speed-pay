@@ -4,7 +4,7 @@ export interface UserDetails {
     firstName: string;
     lastName: string;
     email: string;
-    phoneNumber: number;
+    phoneNumber: string;
 
 }
 
@@ -14,5 +14,5 @@ export interface UserContextType extends UserDetails {
     setFirstName: React.Dispatch<React.SetStateAction<string>>;
     setLastName: React.Dispatch<React.SetStateAction<string>>;
     setEmail: React.Dispatch<React.SetStateAction<string>>;
-    setPhoneNumber: React.Dispatch<React.SetStateAction<number>>;
+    setPhoneNumber: React.Dispatch<React.SetStateAction<string>>;
   }

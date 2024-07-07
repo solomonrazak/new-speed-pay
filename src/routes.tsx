@@ -12,6 +12,8 @@ import TellOverview from "./components/teller/TellOverview";
 import BillPayments from "./components/teller/BillPayments";
 import BillGenerator from "./components/teller/BillGenerator";
 import TellReports from "./components/teller/TellReports";
+import NewUser from "./components/setupzone/NewUser";
+import NewService from "./components/setupzone/NewService";
 
 
 const router = createBrowserRouter([
@@ -46,6 +48,16 @@ const router = createBrowserRouter([
       {
         path: "setup-zone",
         element: <SetupZone />,
+        children: [
+          {
+            path: "new-user",
+            element: <NewUser />
+          },
+          {
+            path: "new-service",
+            element: <NewService />
+          }
+        ]
       },
       {
         path: "services",

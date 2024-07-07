@@ -1,16 +1,21 @@
+import { Link, Outlet } from "react-router-dom";
 import { UserContextProvider } from "../context/UserContext";
+
 
 
 const SetupZone = () => {
   return (
     <UserContextProvider>
-    <main>
+    <main className="w-full">
       <div className="flex">
-        <p>New User</p>
-        <p>New Service</p>
+        <p><Link to="new-user">New User</Link></p>
+        <p><Link to="new-service">New Service</Link></p>
       </div>
-      <div className="border border-slate-900 rounded-md">
+      <div className="flex justify-center items-center mx-auto">
+      <div className="border border-slate-900 rounded-md p-16">
+        <Outlet />
 
+      </div>
       </div>
     </main>
     </UserContextProvider>
