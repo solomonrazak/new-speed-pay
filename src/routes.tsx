@@ -13,6 +13,7 @@ import BillPayments from "./components/teller/BillPayments";
 import BillGenerator from "./components/teller/BillGenerator";
 import TellReports from "./components/teller/TellReports";
 import NewUser from "./components/setupzone/NewUser";
+import NewService from "./components/setupzone/NewService";
 
 
 
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
             path: "new-user",
             element: <NewUser />
           },
+          {
+            path: "new-service",
+            element: <NewService />
+          }
          
         ]
       },

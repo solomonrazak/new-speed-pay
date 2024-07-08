@@ -1,19 +1,19 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useUserContext } from "../context/UserContext";
 import {
-  Modal,
-  ModalContent,
-  ModalBody,
-  Button,
-  useDisclosure,
-} from "@nextui-org/react";
+    Modal,
+    ModalContent,
+    ModalBody,
+    Button,
+    useDisclosure,
+  } from "@nextui-org/react";
 import Vector from "../../assets/images/Vector.png";
-import NewUser from "./NewUser";
+import { useServiceContext } from "../context/ServiceContext";
+import NewService from "./NewService";
 
-const UserOut = () => {
-  const { access, department, firstName, lastName, email, phoneNumber } =
-    useUserContext();
+const ServiceOut = () => {
+
+  const {department, categories, services, fees} = useServiceContext();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [showNewUser, setShowNewUser] = useState(false);
   const [hidePre, setHidePre] = useState(false);
@@ -23,39 +23,30 @@ const UserOut = () => {
     setShowNewUser(true);
     setHidePre(true);
   };
-
   return (
     <div>
       {!hidePre && (
         <div className="px-20">
           <h1 className="text-center mb-10 font-medium">Summary</h1>
-          <div className="grid grid-cols-2 grid-row-3 gap-10">
-            <div>
-              <p className="text-gray-500">Access</p>
-              <p>{access}</p>
-            </div>
+          <div className="grid grid-cols-2 grid-row-2 gap-10">
             <div>
               <p className="text-gray-500">Department</p>
               <p>{department}</p>
             </div>
-
             <div>
-              <p className="text-gray-500">FirstName</p>
-              <p>{firstName}</p>
-            </div>
-            <div>
-              <p className="text-gray-500">LastName</p>
-              <p>{lastName}</p>
+              <p className="text-gray-500">Categories</p>
+              <p>{categories}</p>
             </div>
 
             <div>
-              <p className="text-gray-500">Email Address</p>
-              <p>{email}</p>
+              <p className="text-gray-500">Services</p>
+              <p>{services}</p>
             </div>
             <div>
-              <p className="text-gray-500">Phone Number</p>
-              <p>{phoneNumber}</p>
+              <p className="text-gray-500">Fees</p>
+              <p>{fees}</p>
             </div>
+
           </div>
           <p className="text-center text-slate-900 font-medium mt-5">
             Do you want to save this user?
@@ -114,9 +105,9 @@ const UserOut = () => {
           </div>
         </div>
       )}
-      {showNewUser && <NewUser />}
+      {showNewUser && <NewService />}
     </div>
-  );
-};
+  )
+}
 
-export default UserOut;
+export default ServiceOut;

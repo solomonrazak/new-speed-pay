@@ -21,6 +21,8 @@ export const userContext = createContext<UserContextType>({
     setPhoneNumber: () => {},
   });
 
+  //provider
+
 export const UserContextProvider = ({
   children,
 }: {

@@ -16,3 +16,17 @@ export interface UserContextType extends UserDetails {
     setEmail: React.Dispatch<React.SetStateAction<string>>;
     setPhoneNumber: React.Dispatch<React.SetStateAction<string>>;
   }
+
+export interface ServiceDetails {
+    department: string;
+    categories: string;
+    services: string;
+    fees: string;
+}  
+
+export interface ServiceContextType extends ServiceDetails {
+    setDepartment: React.Dispatch<React.SetStateAction<string>>;
+    setCategories: React.Dispatch<React.SetStateAction<string>>;
+    setServices: React.Dispatch<React.SetStateAction<string>>;
+    setFees: React.Dispatch<React.SetStateAction<string>>;
+  }

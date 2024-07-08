@@ -3,7 +3,7 @@ import { Select, SelectItem, Input } from "@nextui-org/react";
 import { animals } from "./dataOne";
 import { useUserContext } from "../context/UserContext";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+
 import { useState } from "react";
 import UserOut from "./UserOut";
 
@@ -23,7 +23,7 @@ interface IShowOut {
 const NewUser = () => {
   const [showOut, setShowOut] = useState(false);
   const [hideCom, setHideCom] = useState(false);
-  const navigate = useNavigate();
+ 
 
 
   const { 

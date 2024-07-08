@@ -9,7 +9,7 @@ const SetupZone = () => {
     <main className="w-full">
       <div className="flex">
         <p><Link to="new-user">New User</Link></p>
-        <p>New Service</p>
+        <p><Link to="new-service">New Service</Link></p>
       </div>
       <div className="flex justify-center items-center mx-auto">
       <div className="border border-slate-900 rounded-md p-20">
