@@ -1,10 +1,12 @@
 import { Link, Outlet } from "react-router-dom";
 import { UserContextProvider } from "../context/UserContext";
+import { ServiceContextProvider } from "../context/ServiceContext";
 
 
 
 const SetupZone = () => {
   return (
+    <ServiceContextProvider>
     <UserContextProvider>
     <main className="w-full">
       <div className="flex">
@@ -19,6 +21,7 @@ const SetupZone = () => {
       </div>
     </main>
     </UserContextProvider>
+    </ServiceContextProvider>
   )
 }
 

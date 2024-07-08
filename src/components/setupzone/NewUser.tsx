@@ -16,9 +16,6 @@ interface IUserFormInput {
   phoneNumber: string;
 }
 
-interface IShowOut {
-
-}
 
 const NewUser = () => {
   const [showOut, setShowOut] = useState(false);
