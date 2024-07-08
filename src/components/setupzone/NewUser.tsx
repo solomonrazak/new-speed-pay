@@ -4,6 +4,8 @@ import { animals } from "./dataOne";
 import { useUserContext } from "../context/UserContext";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import UserOut from "./UserOut";
 
 interface IUserFormInput {
   department: string;
@@ -14,8 +16,15 @@ interface IUserFormInput {
   phoneNumber: string;
 }
 
+interface IShowOut {
+
+}
+
 const NewUser = () => {
+  const [showOut, setShowOut] = useState(false);
+  const [hideCom, setHideCom] = useState(false);
   const navigate = useNavigate();
+
 
   const { 
     control, 
@@ -25,7 +34,8 @@ const NewUser = () => {
 
   const onSubmit: SubmitHandler<IUserFormInput> = (data) => {
     console.log(data);
-    navigate("/admin/setup-zone/new-service");
+    setShowOut(true);
+    setHideCom(true);
   };
 
   const {
@@ -44,6 +54,8 @@ const NewUser = () => {
   } = useUserContext();
 
   return (
+    <div>
+      {!hideCom && 
     <div className="w-full mx-auto">
       <h1 className="text-center mb-5">Add New User</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -230,6 +242,11 @@ const NewUser = () => {
           </button>
         </div>
       </form>
+    </div>
+}
+{
+  showOut && <UserOut />
+}
     </div>
   );
 };
