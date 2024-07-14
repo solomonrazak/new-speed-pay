@@ -14,6 +14,9 @@ import BillGenerator from "./components/teller/BillGenerator";
 import TellReports from "./components/teller/TellReports";
 import NewUser from "./components/setupzone/NewUser";
 import NewService from "./components/setupzone/NewService";
+import ManageUser from "./components/services/ManageUser";
+import ManageService from "./components/services/ManageService";
+import AllUser from "./components/services/AllUser";
 
 
 
@@ -64,6 +67,23 @@ const router = createBrowserRouter([
       {
         path: "services",
         element: <Services />,
+        children: [
+          {
+            path: "manage-user",
+            element: <ManageUser />,
+            children: [
+              {
+                path: "all-user",
+                element: <AllUser />
+              }
+            ]
+          },
+          {
+            path: "manage-service",
+            element: <ManageService />
+          }
+
+        ]
       },
       {
         path: "reports",
