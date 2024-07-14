@@ -18,6 +18,8 @@ import ManageUser from "./components/services/ManageUser";
 import ManageService from "./components/services/ManageService";
 import AllUser from "./components/services/AllUser";
 import Inputter from "./components/services/Inputter";
+import Approver from "./components/services/Approver";
+import Viewer from "./components/services/Viewer";
 
 
 
@@ -80,6 +82,14 @@ const router = createBrowserRouter([
               {
                 path: "inputter",
                 element: <Inputter />
+              },
+              {
+                path: "approver",
+                element: <Approver />
+              },
+              {
+                path: "viewer",
+                element: <Viewer />
               }
             ]
           },

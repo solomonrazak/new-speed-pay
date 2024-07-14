@@ -38,18 +38,22 @@ const ManageUser = () => {
               </div>
             </div>
             </Link>
+            <Link to="approver" className="w-full flex items-center">
             <div className="flex text-[10px] gap-1 cursor-pointer items-center w-full h-full px-2 justify-center">
               <p>Approver</p>
               <div className="rounded-full flex justify-center items-center h-4 w-4 bg-yellow-100 text-yellow-500">
                 10
               </div>
             </div>
+            </Link>
+            <Link to="viewer">
             <div className="flex text-[10px] gap-1 cursor-pointer items-center w-full h-full px-2 justify-center">
               <p>Viewer</p>
               <div className="rounded-full flex justify-center items-center h-4 w-4 bg-green-200 text-green-500">
                 4
               </div>
             </div>
+            </Link>
           </div>
           <div className="flex gap-2">
             <div className="flex text-black gap-1 text-[13px] items-center px-2 border-gray-500 bg-white rounded-md border-1 py-1">
