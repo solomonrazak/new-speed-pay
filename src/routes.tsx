@@ -17,6 +17,7 @@ import NewService from "./components/setupzone/NewService";
 import ManageUser from "./components/services/ManageUser";
 import ManageService from "./components/services/ManageService";
 import AllUser from "./components/services/AllUser";
+import Inputter from "./components/services/Inputter";
 
 
 
@@ -75,6 +76,10 @@ const router = createBrowserRouter([
               {
                 path: "all-user",
                 element: <AllUser />
+              },
+              {
+                path: "inputter",
+                element: <Inputter />
               }
             ]
           },
