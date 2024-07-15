@@ -20,6 +20,10 @@ import AllUser from "./components/services/AllUser";
 import Inputter from "./components/services/Inputter";
 import Approver from "./components/services/Approver";
 import Viewer from "./components/services/Viewer";
+import AllServices from "./components/services/AllServices";
+import Forms from "./components/services/Forms";
+import Fees from "./components/services/Fees";
+import Trials from "./components/services/Trials";
 
 
 
@@ -95,7 +99,25 @@ const router = createBrowserRouter([
           },
           {
             path: "manage-service",
-            element: <ManageService />
+            element: <ManageService />,
+            children: [
+              {
+                path: "all-services",
+                element: <AllServices />,
+              },
+              {
+                path: "forms",
+                element: <Forms />,
+              },
+              {
+                path: "fees",
+                element: <Fees />,
+              },
+              {
+                path: "trials",
+                element: <Trials />
+              }
+            ]
           }
 
         ]

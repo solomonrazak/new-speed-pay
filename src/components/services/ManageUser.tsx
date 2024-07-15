@@ -60,10 +60,10 @@ const ManageUser = () => {
               <CiFilter className="w-[25px] h-[25px]" />
               <p>Filter</p>
             </div>
-            <div className="flex text-black gap-2 text-[11px] items-center px-2 border-gray-500 bg-white rounded-md border-1 py-1">
+            <div className="flex text-black gap-1 text-[10px] items-center px-2 border-gray-500 bg-white rounded-md border-1 py-1">
               <IoFilter className="w-[15px] h-[20px]" />
               <p>Newest First</p>
-              <MdKeyboardArrowDown className="w-[10px] h-[20px] text-[30px]" />
+              <MdKeyboardArrowDown className="w-[18px] h-[20px] text-[30px]" />
             </div>
           </div>
         </div>
