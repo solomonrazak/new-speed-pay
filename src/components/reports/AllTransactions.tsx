@@ -21,7 +21,7 @@ const AllTransactions: React.FC = () => {
         </thead>
         <tbody>
           <tr key={1} className="border border-solid border-l-0 border-r-0 text-[12px]">
-            <td className="px-3 py-2"><div className="text-green-500 bg-green-200 rounded-large px-2 py-1">Successful</div></td>
+            <td className="px-3 py-2"><div className="text-green-500 bg-green-200 rounded-large px-2 py-1 text-center">Successful</div></td>
             <td className="px-3 py-2">27.05.2024</td>
             <td className="px-3 py-2">#9101</td>
             <td className="px-3 py-2">Revenue</td>
@@ -33,7 +33,7 @@ const AllTransactions: React.FC = () => {
           </tr>
          
           <tr key={1} className="border border-solid border-l-0 border-r-0 text-[12px]">
-          <td className="px-3 py-2"><div className="text-green-500 bg-green-200 rounded-large px-2 py-1">Successful</div></td>
+          <td className="px-3 py-2"><div className="text-green-500 bg-green-200 rounded-large px-2 py-1 text-center">Successful</div></td>
             <td className="px-3 py-2">27.05.2024</td>
             <td className="px-3 py-2">#9102</td>
             <td className="px-3 py-2">charges</td>
@@ -55,7 +55,7 @@ const AllTransactions: React.FC = () => {
             <td><div className="flex flex-row items-center text-[18px]"><RiArrowDropDownLine /><PiDotsThreeOutlineVerticalThin /></div></td>
           </tr>
           <tr key={1} className="border border-solid border-l-0 border-r-0 text-[12px]">
-          <td className="px-3 py-2"><div className="text-green-500 bg-green-200 rounded-large px-2 py-1">Successful</div></td>
+          <td className="px-3 py-2"><div className="text-green-500 bg-green-200 rounded-large px-2 py-1 text-center">Successful</div></td>
             <td className="px-3 py-2">27.05.2024</td>
             <td className="px-3 py-2">#9104</td>
             <td className="px-3 py-2">charges</td>
@@ -88,7 +88,7 @@ const AllTransactions: React.FC = () => {
             <td><div className="flex flex-row items-center text-[18px]"><RiArrowDropDownLine /><PiDotsThreeOutlineVerticalThin /></div></td>
           </tr>
           <tr key={1} className="border border-solid border-l-0 border-r-0 text-[12px]">
-          <td className="px-3 py-2"><div className="text-green-500 bg-green-200 rounded-large px-2 py-1">Successful</div></td>
+          <td className="px-3 py-2"><div className="text-green-500 bg-green-200 rounded-large px-2 py-1 text-center">Successful</div></td>
             <td className="px-3 py-2">27.05.2024</td>
             <td className="px-3 py-2">#9107</td>
             <td className="px-3 py-2">Revenue</td>
@@ -99,7 +99,7 @@ const AllTransactions: React.FC = () => {
             <td><div className="flex flex-row items-center text-[18px]"><RiArrowDropDownLine /><PiDotsThreeOutlineVerticalThin /></div></td>
           </tr>
           <tr key={1} className="border border-solid border-l-0 border-r-0 text-[12px]">
-          <td className="px-3 py-2"><div className="text-green-500 bg-green-200 rounded-large px-2 py-1">Successful</div></td>
+          <td className="px-3 py-2"><div className="text-green-500 bg-green-200 rounded-large px-2 py-1 text-center">Successful</div></td>
             <td className="px-3 py-2">27.05.2024</td>
             <td className="px-3 py-2">#9108</td>
             <td className="px-3 py-2">Revenue</td>
