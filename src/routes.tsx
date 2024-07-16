@@ -24,6 +24,9 @@ import AllServices from "./components/services/AllServices";
 import Forms from "./components/services/Forms";
 import Fees from "./components/services/Fees";
 import Trials from "./components/services/Trials";
+import AllTransactions from "./components/reports/AllTransactions";
+import Failed from "./components/reports/Failed";
+import Success from "./components/reports/Success";
 
 
 
@@ -125,6 +128,20 @@ const router = createBrowserRouter([
       {
         path: "reports",
         element: <Reports />,
+        children: [
+          {
+            path: "all-transactions",
+            element: <AllTransactions />,
+          },
+          {
+            path: "failed",
+            element: <Failed />
+          },
+          {
+            path: "success",
+            element: <Success />
+          }
+        ]
       }
     ]
 
