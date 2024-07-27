@@ -27,6 +27,8 @@ import Trials from "./components/services/Trials";
 import AllTransactions from "./components/reports/AllTransactions";
 import Failed from "./components/reports/Failed";
 import Success from "./components/reports/Success";
+import InvoiceDetails from "./components/billpayments/InvoiceDetails";
+import NewInvoice from "./components/billpayments/NewInvoice";
 
 
 
@@ -157,6 +159,16 @@ const router = createBrowserRouter([
       {
         path: "bill-payments",
         element: <BillPayments />,
+        children: [
+          {
+            path: "new-invoice",
+            element: <NewInvoice />,
+          },
+          {
+            path: "invoice-details",
+            element: <InvoiceDetails />,
+          },
+        ],
       },
       {
         path: "bill-generator",

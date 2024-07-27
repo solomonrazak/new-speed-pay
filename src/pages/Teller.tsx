@@ -8,7 +8,7 @@ interface ITellerProps {
 const Teller = ({}: ITellerProps) => {
   return (
     <main className="grid grid-cols-4 bg-gray-100">
-        <aside className="col-span-1 h-screen bg-gray-200 p-5">
+        <aside className="col-span-1 h-screen bg-gray-200 p-5 min-h-full">
         <h1 className="text-2xl font-medium mb-8 text-center">SpeedPay</h1>
         <div className="ml-[-10px] flex flex-col items-center mb-5">
           <div className="rounded-full">
@@ -26,7 +26,7 @@ const Teller = ({}: ITellerProps) => {
         <div className="flex justify-center">
           <ul className="flex flex-col justify-center gap-5">
             <li><Link to="tell-overview">Overview</Link></li>
-            <li><Link to="bill-payments">Bill Payments</Link></li>
+            <li><Link to="bill-payments/new-invoice">Bill Payments</Link></li>
             <li><Link to="bill-generator">Bill Generator</Link></li>
             <li><Link to="tell-reports">Reports</Link></li>
             <li>Profile</li>
