@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, Outlet, useMatch } from "react-router-dom";
 import { Input } from "@nextui-org/react";
 interface ICurrency {
   value: number;
@@ -49,8 +50,11 @@ const Cash: React.FC = () => {
     setValues(updatedValue);
   };
 
+  const match = useMatch("/teller/bill-payments/invoice-details/pay-by-cash/receipt")
+
   return (
     <div>
+      {!match && 
       <div>
         <h1 className="text-center font-medium">Count Cash</h1>
         <div className="flex justify-center gap-16">
@@ -67,9 +71,9 @@ const Cash: React.FC = () => {
                   className="flex w-72 h-12 border-1 border-gray-400 bg-white justify-between items-center px-2 rounded-md"
                 >
                   <div>
-                    <p className="text-gray-400">{denomination.value}</p>
+                    <p className="text-gray-400 ml-[26px]">{denomination.value}</p>
                     <input
-                      type="number"
+                      type="text"
                       value={denomination.quantity}
                       onChange={(e) =>
                         handleInputChange(
@@ -79,10 +83,10 @@ const Cash: React.FC = () => {
                           Number(e.target.value)
                         )
                       }
-                      className="w-16 text-center"
+                      className="w-16 text-center border-b-1"
                     />
                   </div>
-                  <div className="bg-gray-400 h-full ml-[9rem] w-[0.5px]"></div>
+                  <div className="bg-gray-400 h-full ml-[6rem] w-[0.5px]"></div>
                   <p>{denomination.amount}</p>
                 </div>
               ))}
@@ -99,7 +103,7 @@ const Cash: React.FC = () => {
                 {values.coins.map((coin, index) => (
                     <div key={index} className="flex w-72 h-12 border-1 border-gray-400 bg-white justify-between items-center px-2 rounded-md">
                         <div>
-                        <p className="text-gray-400">{coin.value}</p>
+                        <p className="text-gray-400 ml-[25px]">{coin.value}</p>
                         <input
                           type="text"
                           value={coin.quantity}
@@ -114,7 +118,7 @@ const Cash: React.FC = () => {
                           className="w-16 text-center"
                         />
                       </div>
-                      <div className="bg-gray-400 h-full ml-[9rem] w-[0.5px]"></div>
+                      <div className="bg-gray-400 h-full ml-[5rem] w-[0.5px]"></div>
                       <p>{coin.amount}</p>
 
                     </div>
@@ -150,14 +154,20 @@ const Cash: React.FC = () => {
               radius="none"
               className="max-w-xs bg-white"
             />
+            <Link to="receipt">
             <button
               className="bg-slate-950 text-white w-[20rem] px-2 py-1"
               
             >
               Continue
             </button>
+            </Link>
           </div>
       </div>
+}
+<div>
+  <Outlet />
+</div>
     </div>
   );
 };

@@ -29,6 +29,8 @@ import Failed from "./components/reports/Failed";
 import Success from "./components/reports/Success";
 import InvoiceDetails from "./components/billpayments/InvoiceDetails";
 import NewInvoice from "./components/billpayments/NewInvoice";
+import Cash from "./components/billpayments/Cash";
+import Receipt from "./components/receipt/Receipt";
 
 
 
@@ -167,6 +169,18 @@ const router = createBrowserRouter([
           {
             path: "invoice-details",
             element: <InvoiceDetails />,
+            children: [
+              {
+                path: "pay-by-cash",
+                element: <Cash />,
+                children: [
+                  {
+                    path: "receipt",
+                    element: <Receipt />
+                  }
+                ]
+              }
+            ]
           },
         ],
       },

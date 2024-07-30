@@ -1,10 +1,16 @@
+
+
 import React from 'react';
 import InvoiceTable from './InvoiceTable';
+import { Link, Outlet, useMatch } from 'react-router-dom';
 
 const InvoiceDetails: React.FC = () => {
+  const isChildRoute = useMatch("/teller/bill-payments/invoice-details/*");
+
   return (
     <div className='w-[53rem] h-full pb-14'>
-         <div className="">
+      {!isChildRoute && (
+        <div className="">
           <h1 className="text-center text-[15px] font-medium mb-5">Invoice Details</h1>
           <div className="border-1 border-gray-300 p-4 rounded-lg">
             <div className="flex justify-between">
@@ -48,16 +54,14 @@ const InvoiceDetails: React.FC = () => {
           <div>
             <p className="text-center mb-3 font-medium mt-3">Payment Mode</p>
             <div className="flex justify-center gap-2">
-             
+              <Link to="pay-by-cash">
                 <button className="bg-slate-900 w-[170px] text-white rounded py-1 text-[13px] font-medium">
                   Cash
                 </button>
-              
-              
+              </Link>
               <button className="bg-slate-900 w-[170px] text-white rounded py-1 text-[13px] font-medium">
                 Mobile Money
               </button>
-              
               <button className="bg-slate-900 w-[170px] text-white rounded py-1 text-[13px] font-medium">
                 UMB Cheque
               </button>
@@ -67,9 +71,10 @@ const InvoiceDetails: React.FC = () => {
             </div>
           </div>
         </div>
-
+      )}
+      <Outlet /> {/* Render child routes if present */}
     </div>
-  )
-}
+  );
+};
 
 export default InvoiceDetails;
