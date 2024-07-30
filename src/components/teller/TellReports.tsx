@@ -1,7 +1,11 @@
+import React from 'react';
+import Reports from '../admin/Reports';
 
-const TellReports = () => {
+const TellReports: React.FC = () => {
   return (
-    <div>TellReports</div>
+    <div>
+      <Reports />
+    </div>
   )
 }
 

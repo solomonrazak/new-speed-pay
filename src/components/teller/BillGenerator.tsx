@@ -1,8 +1,13 @@
+import NewGeneratedInvoice from "../billgenerator/NewGeneratedInvoice";
 
 
-const BillGenerator = () => {
+
+const BillGenerator: React.FC = () => {
   return (
-    <div>BillGenerator</div>
+    <div>
+      <NewGeneratedInvoice />
+
+    </div>
   )
 }
 

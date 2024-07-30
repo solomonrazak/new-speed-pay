@@ -4,6 +4,7 @@ import { Link, Outlet} from "react-router-dom";
 
 const NewInvoice: React.FC = () => {
   return (
+    
     <div className="p-5 w-full flex flex-col items-center justify-center mx-auto ml-[10rem]">
       <div className="space-y-3 mt-[10rem]">
         <div className="relative">
@@ -17,14 +18,15 @@ const NewInvoice: React.FC = () => {
           />
           <FaCheck className="absolute top-9 left-[18.5rem] transform -translate-y-1/2 text-green-500" />
         </div>
-        <Link to="../invoice-details">
+        <Link to="invoice-details">
         <button className="text-white bg-slate-900 w-[320px] py-2">
           Continue
         </button>
         </Link>
       </div>
-      <Outlet />
+     
     </div>
+   
   );
 };
 

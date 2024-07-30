@@ -31,8 +31,7 @@ import InvoiceDetails from "./components/billpayments/InvoiceDetails";
 import NewInvoice from "./components/billpayments/NewInvoice";
 import Cash from "./components/billpayments/Cash";
 import Receipt from "./components/receipt/Receipt";
-
-
+import Momo from "./components/billpayments/Momo";
 
 const router = createBrowserRouter([
   {
@@ -75,7 +74,6 @@ const router = createBrowserRouter([
             path: "new-service",
             element: <NewService />
           }
-         
         ]
       },
       {
@@ -126,7 +124,6 @@ const router = createBrowserRouter([
               }
             ]
           }
-
         ]
       },
       {
@@ -148,7 +145,6 @@ const router = createBrowserRouter([
         ]
       }
     ]
-
   },
   {
     path: "/teller",
@@ -165,18 +161,30 @@ const router = createBrowserRouter([
           {
             path: "new-invoice",
             element: <NewInvoice />,
-          },
-          {
-            path: "invoice-details",
-            element: <InvoiceDetails />,
             children: [
               {
-                path: "pay-by-cash",
-                element: <Cash />,
+                path: "invoice-details",
+                element: <InvoiceDetails />,
                 children: [
                   {
-                    path: "receipt",
-                    element: <Receipt />
+                    path: "pay-by-cash",
+                    element: <Cash />,
+                    children: [
+                      {
+                        path: "receipt",
+                        element: <Receipt />
+                      }
+                    ]
+                  }, 
+                  {
+                    path: "pay-by-momo",
+                    element: <Momo />,
+                    children: [
+                      {
+                        path: "receipt",
+                        element: <Receipt />
+                      }
+                    ]
                   }
                 ]
               }
