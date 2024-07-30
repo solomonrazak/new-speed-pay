@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Input } from "@nextui-org/react";
 interface ICurrency {
   value: number;
   quantity: number;
@@ -101,7 +101,7 @@ const Cash: React.FC = () => {
                         <div>
                         <p className="text-gray-400">{coin.value}</p>
                         <input
-                          type="number"
+                          type="text"
                           value={coin.quantity}
                           onChange={(e) =>
                             handleInputChange(
@@ -119,11 +119,44 @@ const Cash: React.FC = () => {
 
                     </div>
                 ))}
+                <div className="flex w-72 h-12  bg-transparent justify-between items-center px-2 rounded-md">
+                <div>
+                      <p className="font-medium">Overall</p>
+                    </div>
+                    <p>
+                      {
+                      values.denomination.reduce((acc, curr) => acc + curr.amount, 0)
+                      + 
+                      values.coins.reduce((acc, curr) => acc + curr.amount, 0)
+                      }
+                    </p>
+
+
+                </div>
 
               </div>
             </div>
           </div>
         </div>
+        <div className="space-y-3 w-full flex flex-col items-center mt-5">
+            <Input
+              variant="bordered"
+              type="text"
+              label="Paid By"
+              value={values.paidBy}
+              onChange={(e) =>
+                setValues({ ...values, paidBy: e.target.value })
+              }
+              radius="none"
+              className="max-w-xs bg-white"
+            />
+            <button
+              className="bg-slate-950 text-white w-[20rem] px-2 py-1"
+              
+            >
+              Continue
+            </button>
+          </div>
       </div>
     </div>
   );
