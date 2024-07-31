@@ -3,7 +3,7 @@ import SearchIcon from "../icons/SearchIcon";
 import { CiFilter } from "react-icons/ci";
 import { IoFilter } from "react-icons/io5";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 
 const ManageUser = () => {
   return (
@@ -21,39 +21,39 @@ const ManageUser = () => {
           />
         </div>
         <div className="flex gap-3">
-          <div className="flex gap-2 bg-gray-200 items-center rounded-md w-[430px]">
-            <Link to="all-user" className="w-full flex items-center">
-              <div className="cursor-pointer flex items-center text-[10px] w-full h-full gap-1 px-2 justify-center">
+          <div className="flex gap-2 bg-gray-200 items-center rounded-md w-[full]">
+            <NavLink to="all-user"  className={({isActive}) => isActive ? 'bg-white font-semibold border-1 border-gray-400 rounded-md h-full' : ''}>
+              <div className="cursor-pointer flex items-center text-[10px] w-full h-full gap-1 px-5 justify-center">
                 <p>All User</p>
                 <div className="rounded-full flex justify-center items-center h-4 w-4 bg-gray-300">
                   54
                 </div>
               </div>
-            </Link>
-            <Link to="inputter" className="flex w-full items-center">
-            <div className="flex text-[10px] gap-1 cursor-pointer items-center w-full h-full px-2 justify-center">
+            </NavLink>
+            <NavLink to="inputter"  className={({isActive}) => isActive ? 'bg-white font-semibold border-1 border-gray-400 rounded-md h-full' : ''}>
+            <div className="flex text-[10px] gap-1 cursor-pointer items-center w-full h-full px-5 justify-center">
               <p>Inputter</p>
               <div className="rounded-full flex justify-center items-center h-4 w-4 bg-red-200 text-red-600">
                 40
               </div>
             </div>
-            </Link>
-            <Link to="approver" className="w-full flex items-center">
-            <div className="flex text-[10px] gap-1 cursor-pointer items-center w-full h-full px-2 justify-center">
+            </NavLink>
+            <NavLink to="approver" className={({isActive}) => isActive ? 'bg-white font-semibold border-1 border-gray-400 rounded-md h-full' : ''}>
+            <div className="flex text-[10px] gap-1 cursor-pointer items-center w-full h-full px-5 justify-center">
               <p>Approver</p>
               <div className="rounded-full flex justify-center items-center h-4 w-4 bg-yellow-100 text-yellow-500">
                 10
               </div>
             </div>
-            </Link>
-            <Link to="viewer">
-            <div className="flex text-[10px] gap-1 cursor-pointer items-center w-full h-full px-2 justify-center">
+            </NavLink>
+            <NavLink to="viewer" className={({isActive}) => isActive ? 'bg-white font-semibold border-1 border-gray-400 rounded-md h-full' : ''}>
+            <div className="flex text-[10px] gap-1 cursor-pointer items-center w-full h-full px-5 justify-center">
               <p>Viewer</p>
               <div className="rounded-full flex justify-center items-center h-4 w-4 bg-green-200 text-green-500">
                 4
               </div>
             </div>
-            </Link>
+            </NavLink>
           </div>
           <div className="flex gap-2">
             <div className="flex text-black gap-1 text-[13px] items-center px-2 border-gray-500 bg-white rounded-md border-1 py-1">

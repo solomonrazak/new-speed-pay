@@ -199,6 +199,20 @@ const router = createBrowserRouter([
       {
         path: "tell-reports",
         element: <TellReports />,
+        children: [
+          {
+            path: "all-transactions",
+            element: <AllTransactions />,
+          },
+          {
+            path: "failed",
+            element: <Failed />
+          },
+          {
+            path: "success",
+            element: <Success />
+          }
+        ]
       }
     ]
   },
