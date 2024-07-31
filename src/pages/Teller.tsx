@@ -76,7 +76,7 @@ const Teller = ({}: ITellerProps) => {
         <div className="w-[1px] h-full bg-black ml-[-28px]"></div>
         
         <div className="ml-7 mt-10">
-        <p>{activeLinkName}</p>
+        <p className="pb-4 font-medium">{activeLinkName}</p>
           <Outlet />
         </div>
       </div>

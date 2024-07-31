@@ -1,9 +1,18 @@
+import { useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import razzy from "../assets/images/razzy.jpg";
+
+
 
 interface IAdminProps {}
 
 const Admin: React.FC<IAdminProps> = () => {
+
+  const [activeLinkName, setActiveLinkName] = useState<string>("");
+
+  const handleLinkClick = (name: string) => {
+    setActiveLinkName(name)
+  }
   return (
     <main className="grid grid-cols-4 bg-gray-100">
       <aside className="col-span-1 h-screen bg-gray-200 p-5">
@@ -23,12 +32,13 @@ const Admin: React.FC<IAdminProps> = () => {
         </div>
         <div className="flex justify-center">
           <ul className="flex flex-col justify-center gap-5">
-            <li>
+            <li className={`${setActiveLinkName("overview") ? "": ""}`}>
               <NavLink
                 to="overview"
                 className={({ isActive }) =>
                   isActive ? 'px-3 py-1 bg-gray-800 text-white rounded-md font-medium' : 'p-2'
                 }
+                onClick={() => handleLinkClick("Overview")}
               >
                 Overview
               </NavLink>
@@ -39,8 +49,9 @@ const Admin: React.FC<IAdminProps> = () => {
                 className={({ isActive }) =>
                   isActive ? 'px-3 py-1 bg-gray-800 text-white rounded-md font-medium' : 'p-2'
                 }
+                onClick={() => handleLinkClick("Setup Zone")}
               >
-                Set up Zone
+                Setup Zone
               </NavLink>
             </li>
             <li>
@@ -49,6 +60,7 @@ const Admin: React.FC<IAdminProps> = () => {
                 className={({ isActive }) =>
                   isActive ? 'px-3 py-1 font-medium bg-gray-800 text-white rounded-md' : 'p-2'
                 }
+                onClick={() => handleLinkClick("Services")}
               >
                 Services
               </NavLink>
@@ -58,7 +70,9 @@ const Admin: React.FC<IAdminProps> = () => {
                 to="reports/all-transactions"
                 className={({ isActive }) =>
                   isActive ? 'px-3 py-1 font-medium bg-gray-800 text-white rounded-md' : 'p-2'
+                
                 }
+                onClick={() => handleLinkClick("Reports")}
               >
                 Reports
               </NavLink>
@@ -69,6 +83,7 @@ const Admin: React.FC<IAdminProps> = () => {
                 className={({ isActive }) =>
                   isActive ? 'px-3 py-1 bg-gray-800 text-white font-medium rounded-md' : 'p-2'
                 }
+                onClick={() => handleLinkClick("Profile")}
               >
                 Profile
               </NavLink>
@@ -78,7 +93,8 @@ const Admin: React.FC<IAdminProps> = () => {
       </aside>
       <div className="col-span-3 col-start-2 flex gap-3 px-7">
         <div className="w-[1px] h-full bg-black ml-[-28px]"></div>
-        <div className="ml-7 mt-10">
+        <div className="ml-7 mt-10 pb-10">
+          <p className="pb-4 mt-[-12px] font-medium">{activeLinkName}</p>
           <Outlet />
         </div>
       </div>
