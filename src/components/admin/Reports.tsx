@@ -1,6 +1,6 @@
 import {Input} from "@nextui-org/react";
 import SearchIcon from "../icons/SearchIcon";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 import { CiFilter } from "react-icons/ci";
 import { IoFilter } from "react-icons/io5";
 import { MdKeyboardArrowDown } from "react-icons/md";
@@ -21,31 +21,31 @@ const Reports = () => {
           />
         </div>
         <div className="flex gap-3">
-          <div className="flex gap-2 bg-gray-200 items-center rounded-md w-[430px]">
-            <Link to="all-transactions" className="w-full flex items-center">
-              <div className="cursor-pointer flex items-center text-[10px] w-full h-full gap-1 px-2 justify-center">
+          <div className="flex gap-2 bg-gray-200 items-center rounded-md w-[348px]">
+            <NavLink to="all-transactions" className={({isActive}) => isActive ? 'bg-white font-semibold border-1 border-gray-400 rounded-md h-full' : ''}>
+              <div className="cursor-pointer flex items-center text-[10px] h-full gap-2 px-5 justify-center">
                 <p>AllTransactions</p>
                 <div className="rounded-full flex justify-center items-center h-4 w-4 bg-gray-300">
                   54
                 </div>
               </div>
-            </Link>
-            <Link to="failed" className="flex w-full items-center">
-            <div className="flex text-[10px] gap-1 cursor-pointer items-center w-full h-full px-2 justify-center">
+            </NavLink>
+            <NavLink to="failed"  className={({isActive}) => isActive ? 'bg-white font-semibold border-1 border-gray-400 rounded-md h-full' : ''}>
+            <div className="flex text-[10px] gap-2 cursor-pointer items-center h-full px-5 justify-center">
               <p>Failed</p>
               <div className="rounded-full flex justify-center items-center h-4 w-4 bg-red-200 text-red-600">
                 40
               </div>
             </div>
-            </Link>
-            <Link to="success" className="w-full flex items-center">
-            <div className="flex text-[10px] gap-1 cursor-pointer items-center w-full h-full px-2 justify-center">
+            </NavLink>
+            <NavLink to="success"  className={({isActive}) => isActive ? 'bg-white font-semibold border-1 border-gray-400 rounded-md h-full' : ''}>
+            <div className="flex text-[10px] gap-2 cursor-pointer items-center h-full px-5 justify-center">
               <p>Successful</p>
               <div className="rounded-full flex justify-center items-center h-4 w-4 bg-yellow-100 text-yellow-500">
                 10
               </div>
             </div>
-            </Link>
+            </NavLink>
            
           </div>
           <div className="flex gap-2">

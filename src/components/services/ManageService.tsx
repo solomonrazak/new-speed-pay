@@ -24,7 +24,7 @@ const ManageService = () => {
       <div className="flex gap-2 bg-gray-200 items-center rounded-md w-full">
         <NavLink to="all-services" className={({isActive}) => isActive ? 'bg-white font-semibold border-1 border-gray-400 rounded-md h-full' : ''}>
         <div className="cursor-pointer flex items-center text-[10px] h-full gap-1 px-4 justify-center">
-          <p>AllServices</p>
+          <p>All Services</p>
           <div className="rounded-full flex justify-center items-center h-4 w-4 bg-gray-300">54</div>
         </div>
         </NavLink>
@@ -41,7 +41,7 @@ const ManageService = () => {
         </div>
         </NavLink>
         <NavLink to="trials" className={({isActive}) => isActive ? 'bg-white font-semibold border-1 border-gray-400 rounded-md h-full' : ''}>
-        <div className="flex text-[9px] gap-1 cursor-pointer items-center h-full px-2 justify-center">
+        <div className="flex text-[10px] gap-1 cursor-pointer items-center h-full px-2 justify-center">
           <p>Trials & Adverts</p>
           <div className="rounded-full flex justify-center items-center h-4 w-4 bg-green-200 text-green-500">4</div>
         </div>
