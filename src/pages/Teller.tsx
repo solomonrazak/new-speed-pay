@@ -52,7 +52,7 @@ const Teller = ({}: ITellerProps) => {
                 >
               <li className="px-3">Bill Generator</li>
             </NavLink>
-            <NavLink to="tell-reports"  className={({ isActive }) =>
+            <NavLink to="tell-reports/all-transactions"  className={({ isActive }) =>
                   isActive ? 'py-1 bg-gray-800 text-white rounded-md font-medium' : ''
                 }
                 onClick={() => handleLinkClick("Reports")}

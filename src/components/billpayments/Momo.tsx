@@ -1,9 +1,14 @@
 import React from "react";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import { Input } from "@nextui-org/react";
 
 const Momo: React.FC = () => {
+  const location = useLocation();
+  const isChildRoute = location.pathname.includes("/teller/bill-payments/new-invoice/invoice-details/pay-by-momo/");
+
   return (
     <div>
+      {!isChildRoute && 
       <div>
         <h1 className="text-center font-medium">Mobile Money</h1>
         <div className="flex flex-col gap-2 items-center mt-10">
@@ -38,10 +43,16 @@ const Momo: React.FC = () => {
             radius="none"
             className="max-w-xs bg-white"
           />
+          <Link to="receipt">
           <button className="bg-slate-950 text-white w-[320px] py-1 rounded-md">
             Continue
           </button>
+          </Link>
         </div>
+      </div>
+      }
+      <div>
+        <Outlet />
       </div>
     </div>
   );

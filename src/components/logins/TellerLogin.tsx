@@ -33,7 +33,7 @@ const TellerLogin: React.FC = () => {
   const onSubmit: SubmitHandler<IFormInput> = data => {
     console.log('Email', data.email);
     console.log('Password', data.password);
-    navigate("/teller")
+    navigate("/teller/tell-overview")
     reset();
   };
 

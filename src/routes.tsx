@@ -190,7 +190,10 @@ const router = createBrowserRouter([
               }
             ]
           },
-        ],
+             
+            
+          
+        ]
       },
       {
         path: "bill-generator",

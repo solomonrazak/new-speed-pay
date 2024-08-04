@@ -32,7 +32,7 @@ const Admin: React.FC<IAdminProps> = () => {
         </div>
         <div className="flex justify-center">
           <ul className="flex flex-col justify-center gap-5">
-            <li className={`${setActiveLinkName("overview") ? "": ""}`}>
+            <li>
               <NavLink
                 to="overview"
                 className={({ isActive }) =>
