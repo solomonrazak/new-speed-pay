@@ -1,9 +1,12 @@
+import React from 'react';
+import ImageAlign from '../overview/ImageAlign';
 
-
-const Overview = () => {
+const Overview: React.FC = () => {
   return (
    
-    <div>Overview</div>
+    <div>
+      <ImageAlign />
+    </div>
     
   )
 }

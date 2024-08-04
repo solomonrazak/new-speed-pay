@@ -35,7 +35,7 @@ const Admin: React.FC<IAdminProps> = () => {
               className={
                 activeLinkName === "Overview"
                   ? "px-3 py-1 bg-gray-800 text-white rounded-md font-medium"
-                  : "p-2"
+                  : "px-3"
               }
               onClick={() => handleLinkClick("Overview")}
             >
@@ -47,7 +47,7 @@ const Admin: React.FC<IAdminProps> = () => {
               className={
                 activeLinkName === "Setup Zone"
                   ? "px-3 py-1 bg-gray-800 text-white rounded-md font-medium"
-                  : "p-2"
+                  : "px-3"
               }
               onClick={() => handleLinkClick("Setup Zone")}
             >
@@ -59,7 +59,7 @@ const Admin: React.FC<IAdminProps> = () => {
               className={
                 activeLinkName === "Services"
                   ? "px-3 py-1 bg-gray-800 text-white rounded-md font-medium"
-                  : "p-2"
+                  : "px-3"
               }
               onClick={() => handleLinkClick("Services")}
             >
@@ -71,7 +71,7 @@ const Admin: React.FC<IAdminProps> = () => {
               className={
                 activeLinkName === "Reports"
                   ? "px-3 py-1 bg-gray-800 text-white rounded-md font-medium"
-                  : "p-2"
+                  : "px-3"
               }
               onClick={() => handleLinkClick("Reports")}
             >
@@ -83,7 +83,7 @@ const Admin: React.FC<IAdminProps> = () => {
               className={
                 activeLinkName === "Profile"
                   ? "px-3 py-1 bg-gray-800 text-white rounded-md font-medium"
-                  : "p-2"
+                  : "px-3"
               }
               onClick={() => handleLinkClick("Profile")}
             >
