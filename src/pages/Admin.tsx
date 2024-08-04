@@ -1,18 +1,17 @@
+
 import { useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import razzy from "../assets/images/razzy.jpg";
 
-
-
 interface IAdminProps {}
 
 const Admin: React.FC<IAdminProps> = () => {
-
   const [activeLinkName, setActiveLinkName] = useState<string>("");
 
   const handleLinkClick = (name: string) => {
-    setActiveLinkName(name)
-  }
+    setActiveLinkName(name);
+  };
+
   return (
     <main className="grid grid-cols-4 bg-gray-100">
       <aside className="col-span-1 h-screen bg-gray-200 p-5">
@@ -32,59 +31,63 @@ const Admin: React.FC<IAdminProps> = () => {
         </div>
         <div className="flex justify-center">
           <ul className="flex flex-col justify-center gap-5">
-            <li>
-              <NavLink
-                to="overview"
-                className={({ isActive }) =>
-                  isActive ? 'px-3 py-1 bg-gray-800 text-white rounded-md font-medium' : 'p-2'
-                }
-                onClick={() => handleLinkClick("Overview")}
-              >
+            <li
+              className={
+                activeLinkName === "Overview"
+                  ? "px-3 py-1 bg-gray-800 text-white rounded-md font-medium"
+                  : "p-2"
+              }
+              onClick={() => handleLinkClick("Overview")}
+            >
+              <NavLink to="overview">
                 Overview
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="setup-zone/new-user"
-                className={({ isActive }) =>
-                  isActive ? 'px-3 py-1 bg-gray-800 text-white rounded-md font-medium' : 'p-2'
-                }
-                onClick={() => handleLinkClick("Setup Zone")}
-              >
+            <li
+              className={
+                activeLinkName === "Setup Zone"
+                  ? "px-3 py-1 bg-gray-800 text-white rounded-md font-medium"
+                  : "p-2"
+              }
+              onClick={() => handleLinkClick("Setup Zone")}
+            >
+              <NavLink to="setup-zone/new-user">
                 Setup Zone
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="services/manage-user/all-user"
-                className={({ isActive }) =>
-                  isActive ? 'px-3 py-1 font-medium bg-gray-800 text-white rounded-md' : 'p-2'
-                }
-                onClick={() => handleLinkClick("Services")}
-              >
+            <li
+              className={
+                activeLinkName === "Services"
+                  ? "px-3 py-1 bg-gray-800 text-white rounded-md font-medium"
+                  : "p-2"
+              }
+              onClick={() => handleLinkClick("Services")}
+            >
+              <NavLink to="services/manage-user/all-user">
                 Services
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="reports/all-transactions"
-                className={({ isActive }) =>
-                  isActive ? 'px-3 py-1 font-medium bg-gray-800 text-white rounded-md' : 'p-2'
-                
-                }
-                onClick={() => handleLinkClick("Reports")}
-              >
+            <li
+              className={
+                activeLinkName === "Reports"
+                  ? "px-3 py-1 bg-gray-800 text-white rounded-md font-medium"
+                  : "p-2"
+              }
+              onClick={() => handleLinkClick("Reports")}
+            >
+              <NavLink to="reports/all-transactions">
                 Reports
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="profile"
-                className={({ isActive }) =>
-                  isActive ? 'px-3 py-1 bg-gray-800 text-white font-medium rounded-md' : 'p-2'
-                }
-                onClick={() => handleLinkClick("Profile")}
-              >
+            <li
+              className={
+                activeLinkName === "Profile"
+                  ? "px-3 py-1 bg-gray-800 text-white rounded-md font-medium"
+                  : "p-2"
+              }
+              onClick={() => handleLinkClick("Profile")}
+            >
+              <NavLink to="profile">
                 Profile
               </NavLink>
             </li>
@@ -103,3 +106,4 @@ const Admin: React.FC<IAdminProps> = () => {
 };
 
 export default Admin;
+
