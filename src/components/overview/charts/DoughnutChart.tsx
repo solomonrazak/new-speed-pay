@@ -38,8 +38,10 @@ const DoughnutChart = ({
 		id: 'textCenter',
 		beforeDatasetsDraw(chart: any, _args: any, _pluginOptions: any) {
 			const { ctx, data } = chart;
-			ctx.save;
-			ctx.font = 'bold 22px san-serif';
+
+			
+			ctx.save();
+			ctx.font = 'bold 18px san-serif';
 			ctx.fillStyle = 'black';
 			ctx.textAlign = 'center';
 			ctx.textBaseline = 'middle';
@@ -48,6 +50,7 @@ const DoughnutChart = ({
 				chart.getDatasetMeta(0).data[0].x,
 				chart.getDatasetMeta(0).data[0].y,
 			);
+			ctx.restore();
 		},
 	};
 
